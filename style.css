@@ -1,0 +1,828 @@
+.header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px; /* Incrementado para dar más espacio */
+    background-color: #333; /* Gris oscuro */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+}
+
+.header-bar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Arial;
+    position: absolute;
+    top: 50px; /* Bajado para evitar colisión con el borde superior */
+    left: 120px;
+    font-size: 65px;
+    color: white;
+}
+
+h3 {
+    font-family: Arial;
+    position: absolute;
+    top: 75px; /* Ajustado proporcionalmente al h1 */
+    left: 530px;
+    font-size: 40px;
+    color: rgb(90, 115, 163);
+}
+
+/* Se eliminó la regla general de img. Reglas específicas para .logo y .product-image abajo. */
+
+.logo { /* Regla específica para la imagen del logo */
+    position: absolute;
+    top: 90px; /* Colocado más abajo como se solicitó */
+    left: 30px;
+    border-radius: 50%; /* Mantener circular para el logo */
+    width: 70px; /* Movido desde HTML */
+    height: 70px; /* Movido desde HTML */
+}
+
+.header-nav {
+    position: absolute;
+    top: 110px; /* Ajustado para bajar con el resto de elementos */
+    right: 180px; /* Movido a la derecha para evitar colisiones */
+    left: auto;
+    transform: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    font-family: Arial;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+}
+
+.nav-item a { color: white; text-decoration: none; }
+
+/* Títulos debajo de la barra de encabezado */
+.main-title {
+    font-family: Arial;
+    font-size: 50px; /* Tamaño de fuente original de h1tittle */
+    color: black;
+    position: absolute;
+    top: 250px; /* Posición vertical específica */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product-line-title {
+    font-family: Arial;
+    font-size: 45px; /* Tamaño de fuente original de h1ittle */
+    color: black;
+    position: absolute;
+    top: 350px; /* Posición vertical específica para separar del título anterior */
+    left: 600px; /* Posición izquierda específica */
+}
+
+/* Contenedor de la galería de imágenes de productos */
+.product-gallery {
+    width: 100%;
+    position: absolute;
+    top: 500px; /* Posición vertical de la galería completa */
+    left: 0;
+    display: flex; /* Organizar imágenes horizontalmente */
+    justify-content: center; /* CENTRADO DE LA GALERÍA */
+    align-items: flex-start; /* Alinear elementos al inicio */
+    flex-wrap: nowrap; /* Asegura que todos los productos estén en una sola línea */
+}
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Espaciado externo entre bloques */
+    padding: 20px; /* Espaciado interno dentro del bloque */
+    width: 320px; /* Ancho fijo para asegurar que todos los bloques sean iguales */
+}
+
+/* Estilo general para nombres de productos */
+.product-name {
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px; /* Espacio entre la imagen y el nombre */
+    text-align: center; /* Centrar el texto */
+    width: 100%; /* Asegura que el nombre ocupe todo el ancho para centrar el texto */
+    color: #333;
+}
+
+/* Estilo base y animación para el botón Comprar */
+.buy-button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+}
+
+.buy-button:hover {
+    background-color: #1e7e34; /* Verde más oscuro al pasar el ratón */
+}
+
+.buy-button:active {
+    animation: explode 0.4s ease-out forwards;
+}
+
+/* =========================================================== */
+/*      BLOQUES DE CONTROL TOTAL (EDITA CADA LAPTOP AQUÍ)      */
+/* =========================================================== */
+
+/* --- HP OMEN 16 --- */
+.HP-Omen-16 {
+    /* Edita aquí la posición del bloque, márgenes o fondo */
+}
+.HP-Omen-16-Imagen {
+    /* Edita aquí el TAMAÑO y POSICIÓN de esta imagen */
+    width: 280px;
+    height: 270px; /* Ajustado para alinear con las otras laptops */
+    object-fit: contain;
+    border-radius: 0;
+    position: relative;
+    top: 0; 
+    left: 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.HP-Omen-16-Imagen:hover {
+    transform: scale(1.08);
+}
+
+.HP-Omen-16-Nombre {
+    /* Edita aquí la POSICIÓN y TAMAÑO del texto */
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    width: 100%;
+    position: relative;
+    top: 0px;
+}
+.HP-Omen-16-Precio {
+    /* Control individual del precio/moneda */
+    font-family: Arial;
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+    position: relative;
+    top: 0;
+}
+.HP-Omen-16-Boton {
+    /* Control individual del botón */
+    font-size: 18px;
+    position: relative;
+    top: 0;
+}
+
+/* Estilos para el icono del carrito */
+.cart-icon-container {
+    position: absolute;
+    top: 35px;
+    right: 50px; 
+    z-index: 1100;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 60px;
+    height: 60px;
+    color: white; /* Color blanco para resaltar en la barra gris */
+}
+
+.cart-icon.vibrate {
+    animation: shakeCart 2.5s infinite;
+}
+
+@keyframes shakeCart {
+    0%, 80%, 100% { transform: rotate(0deg); }
+    85% { transform: rotate(15deg); }
+    90% { transform: rotate(-15deg); }
+    95% { transform: rotate(10deg); }
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: none; /* Se muestra al añadir el primer producto */
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto Neón */
+}
+
+/* Estilos para el control de cantidad */
+.quantity-control {
+    display: none; /* OCULTO POR DEFECTO */
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    position: relative;
+    left: 0;
+}
+
+.qty-display {
+    font-size: 20px;
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 4px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.qty-plus {
+    background: #333;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* --- LENOVO LEGION 5I --- */
+.Lenovo-Legion-5i {
+    /* Edita aquí la posición del bloque, márgenes o fondo */
+}
+.Lenovo-Legion-5i-Imagen {
+    /* Edita aquí el TAMAÑO y POSICIÓN de esta imagen */
+    width: 350px;
+    height: 270px;
+    object-fit: contain;
+    border-radius: 0;
+    position: relative;
+    top: 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.Lenovo-Legion-5i-Imagen:hover {
+    transform: scale(1.08);
+}
+
+.Lenovo-Legion-5i-Nombre {
+    /* Edita aquí la POSICIÓN y TAMAÑO del texto */
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+.Lenovo-Legion-5i-Precio {
+    /* Control individual del precio/moneda */
+    font-family: Arial;
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+    position: relative;
+    top: 0;
+}
+.Lenovo-Legion-5i-Boton {
+    /* Control individual del botón */
+    font-size: 18px;
+    position: relative;
+    top: 0;
+}
+
+/* --- LENOVO LOQ --- */
+.Lenovo-Loq {
+    /* Edita aquí la posición del bloque, márgenes o fondo */
+}
+.Lenovo-Loq-Imagen {
+    /* Edita aquí el TAMAÑO y POSICIÓN de esta imagen */
+    width: 500px;
+    height: 270px;
+    object-fit: contain;
+    border-radius: 0;
+    position: relative;
+    top: 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.Lenovo-Loq-Imagen:hover {
+    transform: scale(1.08);
+}
+
+.Lenovo-Loq-Nombre {
+    /* Edita aquí la POSICIÓN y TAMAÑO del texto */
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+.Lenovo-Loq-Precio {
+    /* Control individual del precio/moneda */
+    font-family: Arial;
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+    position: relative;
+    top: 0;
+}
+.Lenovo-Loq-Boton {
+    /* Control individual del botón */
+    font-size: 18px;
+    position: relative;
+    top: 0;
+}
+
+/* --- ASUS ROG STRIX --- */
+.Asus-Rog-Strix {
+    /* Edita aquí la posición del bloque, márgenes o fondo */
+}
+.Asus-Rog-Strix-Imagen {
+    /* Edita aquí el TAMAÑO y POSICIÓN de esta imagen */
+    width: 350px;
+    height: 270px;
+    object-fit: contain;
+    border-radius: 0;
+    position: relative;
+    top: 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.Asus-Rog-Strix-Imagen:hover {
+    transform: scale(1.08);
+}
+
+.Asus-Rog-Strix-Nombre {
+    /* Edita aquí la POSICIÓN y TAMAÑO del texto */
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+.Asus-Rog-Strix-Precio {
+    /* Control individual del precio/moneda */
+    font-family: Arial;
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+    position: relative;
+    top: 0;
+}
+.Asus-Rog-Strix-Boton {
+    /* Control individual del botón */
+    font-size: 18px;
+    position: relative;
+    top: 0;
+}
+
+/* =========================================================== */
+
+/* Etiquetas específicas para cada iPhone */
+/* Se eliminan las reglas específicas de posicionamiento y tamaño para imágenes individuales */
+/* para asegurar consistencia y que .product-image controle el tamaño */
+/* y .product-item controle el posicionamiento */
+/*
+.iphone-17-pm, .iphone-15-pm, .mac-neo { }
+.product-name17, .product-name15 { }
+*/
+
+/* Estilos para el menú de anuncio lateral derecho */
+.announcement-sidebar {
+    position: fixed;
+    top: 160px; /* Ubicado debajo de la barra de encabezado (140px) */
+    right: 20px; /* Espacio desde el borde derecho */
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    font-family: Arial, sans-serif;
+    /* Animación de brillo */
+    animation: glow 2s infinite alternate; /* Aplica la animación */
+}
+
+.announcement-sidebar img {
+    width: 100%; /* La imagen ocupará todo el ancho disponible del menú */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+/* Estilos para el botón de cierre */
+.announcement-sidebar .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.announcement-sidebar .close-btn:hover {
+    color: #333;
+}
+
+/* Keyframes para la animación de brillo */
+@keyframes glow {
+    from { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    to { box-shadow: 0 0 20px 5px rgba(128, 128, 128, 0.7), 0 4px 12px rgba(0,0,0,0.15); } /* Brillo gris */
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: 0.5; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* =========================================================== */
+/*      ESTILOS PARA EL ANUNCIO GRANDE (BANNER HERO)           */
+/* =========================================================== */
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.banner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px); /* Efecto borroso intenso */
+    display: none;
+    z-index: 9999; /* Por encima de todo */
+    animation: fadeInOverlay 0.5s ease-out forwards;
+}
+
+@keyframes scaleInBanner {
+    from { 
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.banner-promocional-grande {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content; /* El banner se adapta al ancho de la imagen */
+    max-width: 70%;    /* No superará el 70% de la pantalla */
+    height: auto;
+    display: none; /* Oculto por defecto para que aparezca vía JS */
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 40px 0; /* Crea el espacio en blanco arriba y abajo (10% total) */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    z-index: 10000; /* Prioridad máxima absoluta */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: scaleInBanner 0.4s ease-out 0.1s forwards; /* 0.1s de retraso para el efecto incremental */
+}
+
+.close-btn-grande {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.banner-espacio-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-espacio-imagen img {
+    max-width: 100%;
+    height: auto;    /* La imagen mantiene su proporción original */
+    max-height: 75vh; /* Evita que sea más alta que la pantalla */
+    display: block;
+}
+
+/* =========================================================== */
+/*      ESTILOS PARA LA PANTALLA DE COMPRA (BETA)              */
+/* =========================================================== */
+
+.checkout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Transparencia NULA */
+    backdrop-filter: none; /* Eliminado el desenfoque para fondo sólido */
+    display: none;
+    z-index: 20000;
+    animation: fadeInOverlay 0.4s ease-out forwards;
+}
+
+.checkout-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20001;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    /* El fondo es blanco sólido y ocupa el 100% sin elementos internos */
+}
+
+/* =========================================================== */
+/*      CONTROL INDIVIDUAL: NOMBRE PRODUCTO EN CHECKOUT        */
+/* =========================================================== */
+
+.checkout-product-header {
+    /* EDITA AQUÍ LA POSICIÓN DEL BLOQUE */
+    position: relative;
+    top: -50px;
+    left: 0px;
+    margin-bottom: 20px;
+}
+
+#checkout-display-name {
+    /* EDITA AQUÍ EL TAMAÑO, COLOR Y FUENTE DEL TEXTO */
+    font-family: Arial, sans-serif;
+    font-size: 60px;
+    color: #222;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =========================================================== */
+/*      ESTRUCTURA DE 3 COLUMNAS (CHECKOUT GRID)               */
+/* =========================================================== */
+
+.checkout-columns-container {
+    display: flex;
+    width: 95%;
+    max-width: 1400px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.checkout-col {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 500px;
+    text-align: left;
+}
+
+.checkout-col h3 {
+    /* Títulos de las columnas */
+    position: static; /* Anular el absolute de los h3 globales */
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Botón de cierre para volver a la tienda */
+.close-checkout {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #333;
+    z-index: 20005;
+}
+
+/* --- ESTILOS DE FORMULARIO --- */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* --- ESTILOS DE RESUMEN --- */
+#summary-content {
+    max-height: 400px;
+    overflow-y: auto; /* Permite scroll si hay muchos productos */
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+#summary-img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+}
+.summary-info {
+    display: flex;
+    flex-direction: column;
+}
+#summary-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+.summary-total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+/* --- ESTILOS DE PAGO --- */
+.payment-btn {
+    width: 100%;
+    padding: 15px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.icon-transfer {
+    width: 20px;
+    height: 20px;
+    background: #555;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 11h18v2H3zm0-4h18v2H3zm0 8h18v2H3z'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 11h18v2H3zm0-4h18v2H3zm0 8h18v2H3z'/%3E%3C/svg%3E") no-repeat center;
+}
+#upload-receipt-area {
+    background: #eef9f0;
+    padding: 15px;
+    border: 1px dashed #28a745;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.confirm-order-btn {
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.confirm-order-btn:hover {
+    background: #333;
+}
+
+/* =========================================================== */
+
+/* =========================================================== */
+/*      OPTIMIZACIÓN PARA DISPOSITIVOS MÓVILES (RESPONSIVE)    */
+/* =========================================================== */
+
+@media (max-width: 768px) {
+    /* Ajuste del Header */
+    .header-bar {
+        height: calc(260px + env(safe-area-inset-top, 20px)); /* Incrementado para el nuevo orden vertical */
+    }
+    h1 {
+        font-size: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(85px + env(safe-area-inset-top, 20px)); /* Ahora debajo del logo */
+    }
+    h3 {
+        font-size: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(125px + env(safe-area-inset-top, 20px)); /* Debajo de LouxMaster */
+    }
+    .logo {
+        width: 60px;
+        height: 60px;
+        top: calc(15px + env(safe-area-inset-top, 20px)); /* Ahora en la parte superior */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .header-nav {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(175px + env(safe-area-inset-top, 20px));
+        gap: 15px;
+    }
+    .nav-item {
+        font-size: 16px;
+    }
+    .cart-icon-container {
+        top: calc(90px + env(safe-area-inset-top, 20px)); /* Posición más baja en móvil */
+        right: 20px;
+    }
+    .cart-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajuste de Títulos y Galería */
+    .main-title {
+        top: calc(230px + env(safe-area-inset-top, 20px));
+        font-size: 30px;
+        width: 90%;
+    }
+    .product-gallery {
+        top: calc(310px + env(safe-area-inset-top, 20px));
+        flex-wrap: wrap; /* Los productos bajan si no caben */
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+    .product-item {
+        width: 90%; /* Un producto por línea para no saturar */
+        margin: 0;
+    }
+
+    /* Pantalla de Compra (3 Columnas a 1 Sola) */
+    .checkout-columns-container {
+        flex-direction: column;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .checkout-col {
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+    #checkout-display-name {
+        font-size: 30px;
+        text-align: center;
+    }
+    .checkout-product-header {
+        top: 0;
+    }
+}

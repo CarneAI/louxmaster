@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loux Master EC</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+    <div class="header-bar">
+      <h1> LouxMaster</h1>
+      <h3>ec.com</h3>
+      <!-- Images de LouxMaster / logotipo OFFICIAL-->
+      <img class="logo" src="/images-2.1.png" alt="iPremium EC" width="70" height="70">
+
+      <!-- Icono del Carrito de Compras -->
+      <div class="cart-icon-container">
+        <div class="cart-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </div>
+        <span id="cart-count" class="cart-badge">0</span>
+      </div>
+
+      <div class="header-nav">
+        <h6 class="nav-item"><a href="#">Accesorios ▾</a></h6>
+        <h6 class="nav-item"><a href="#">Stock Completo ▿</a></h6>
+        <h6 class="nav-item"><a href="#">Comparar</a></h6>
+      </div>
+    </div>
+
+    <!-- Menú de Anuncio Lateral 
+    <div class="announcement-sidebar">
+      <span class="close-btn">&times;</span>
+      <img src="/1-6.jpg.webp" alt="Anuncio Especial">
+      <div class="announcement-text">
+        <h4>¡Oferta por<br>tiempo limitado!</h4>
+        <p>Obtén mouse inhalámbrico GRATIS por la compra de cualquier laptop.</p>
+      </div>
+    </div>
+    -->
+
+    <!-- Capa de fondo para el efecto borroso -->
+    <div class="banner-overlay"></div>
+
+    <!-- Nuevo Menú de Anuncio Grande -->
+    <div class="banner-promocional-grande">
+      <span class="close-btn-grande">&times;</span>
+      <div class="banner-espacio-imagen">
+        <img src="Gemini_Generated_Image_bfuhf1bfuhf1bfuh.png" alt="Gran Oferta Especial">
+      </div>
+    </div>
+
+    <!-- Pantalla de Compra Full Screen (BETA) -->
+    <div class="checkout-overlay"></div>
+    <div class="checkout-screen">
+      <span class="close-checkout">&times;</span>
+      
+      <!-- Bloque para el Nombre del Producto (Editable en CSS) -->
+      <div class="checkout-product-header">
+        <h2 id="checkout-display-name">Nombre del Producto</h2>
+      </div>
+
+      <div class="checkout-columns-container">
+        <div class="checkout-col customer-info">
+          <h3>Datos del Cliente</h3>
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" placeholder="Ej: Juan">
+          </div>
+          <div class="form-group">
+            <label>Apellidos *</label>
+            <input type="text" placeholder="Ej: Pérez">
+          </div>
+          <div class="form-group">
+            <label>Provincia *</label>
+            <input type="text" placeholder="Provincia de entrega">
+          </div>
+          <div class="form-group">
+            <label>Ciudad o zona *</label>
+            <input type="text" placeholder="Ciudad o barrio">
+          </div>
+        </div>
+        <div class="checkout-col order-details">
+          <h3>Resumen de Pedido</h3>
+          <div id="summary-content">
+            <!-- Los productos se cargan aquí dinámicamente -->
+          </div>
+          <div class="summary-total">
+            Total: <span id="summary-total-price">$0.00</span>
+          </div>
+        </div>
+        <div class="checkout-col payment-info">
+          <h3>Método de Pago</h3>
+          <div class="payment-methods">
+            <button id="btn-bank-transfer" class="payment-btn">
+              <span class="icon-transfer"></span>
+              Transferencia Bancaria
+            </button>
+            
+            <div id="upload-receipt-area" style="display: none;">
+              <p>Sube una foto de tu comprobante:</p>
+              <input type="file" id="receipt-upload" accept="image/*">
+            </div>
+          </div>
+          <button class="confirm-order-btn">REALIZAR PEDIDO</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-title">Productos Sugeridos</div>
+
+    <div class="product-gallery">
+      
+      <!-- IMAGENES DE PRODUCTOS-->
+
+      <div class="product-item HP-Omen-16">
+        <img class="product-image HP-Omen-16-Imagen" src="rtxlap.png" alt="HP Omen 16">
+        <div class="HP-Omen-16-Precio">$1,449.00</div>
+        <div class="HP-Omen-16-Nombre">HP Omen 16</div>
+        <div class="quantity-control">
+          <span class="qty-display">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+        <button class="buy-button HP-Omen-16-Boton" 
+                data-name="HP Omen 16" 
+                data-price="1449.00" 
+                data-img="rtxlap.png"
+                data-features="Nvidia RTX 5060 Ti, Intel Core i7, 16GB DDR5, 1TB SSD">Comprar</button>
+      </div>
+
+      <div class="product-item Lenovo-Legion-5i">
+        <img class="product-image Lenovo-Legion-5i-Imagen" src="rtxprota.png" alt="Lenovo Legion 5i">
+        <div class="Lenovo-Legion-5i-Precio">$1,950.00</div>
+        <div class="Lenovo-Legion-5i-Nombre">MSI Vector</div>
+        <div class="quantity-control">
+          <span class="qty-display">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+        <button class="buy-button Lenovo-Legion-5i-Boton" 
+                data-name="MSI Vector" 
+                data-price="1950.00" 
+                data-img="rtxprota.png"
+                data-features="Nvidia RTX 5070 Ti, Intel Core i9, 32GB RAM, Pantalla 165Hz">Comprar</button>
+      </div>
+
+      <div class="product-item Lenovo-Loq">
+        <img class="product-image Lenovo-Loq-Imagen" src="Gemini_Generated_Image_fia1l7fia1l7fia1.png" alt="Lenovo Loq">
+        <div class="Lenovo-Loq-Precio">$1,099.00</div>
+        <div class="Lenovo-Loq-Nombre">Lenovo Loq</div>
+        <div class="quantity-control">
+          <span class="qty-display">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+        <button class="buy-button Lenovo-Loq-Boton" 
+                data-name="Lenovo Loq" 
+                data-price="1099.00" 
+                data-img="Gemini_Generated_Image_fia1l7fia1l7fia1.png"
+                data-features="Nvidia RTX 5060 Ti, Intel Core i5, 16GB RAM, Teclado RGB">Comprar</button>
+      </div>
+
+      <div class="product-item Asus-Rog-Strix">
+        <img class="product-image Asus-Rog-Strix-Imagen" src="Gemini_Generated_Image_dvzjizdvzjizdvzj.png" alt="Asus Rog Strix">
+        <div class="Asus-Rog-Strix-Precio">$1,929.00</div>
+        <div class="Asus-Rog-Strix-Nombre">Asus Rog Strix</div>
+        <div class="quantity-control">
+          <span class="qty-display">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+        <button class="buy-button Asus-Rog-Strix-Boton" 
+                data-name="Asus Rog Strix" 
+                data-price="1929.00" 
+                data-img="Gemini_Generated_Image_dvzjizdvzjizdvzj.png"
+                data-features="Nvidia RTX 5070, AMD Ryzen 9, 32GB DDR5, Diseño ROG">Comprar</button>
+      </div>
+    </div>
+
+    <script>
+      // Lógica para cerrar el anuncio lateral
+      const closeBtn = document.querySelector('.announcement-sidebar .close-btn');
+      const sidebar = document.querySelector('.announcement-sidebar');
+      if (closeBtn && sidebar) {
+        closeBtn.onclick = () => sidebar.style.display = 'none';
+      }
+
+      // Lógica para el Anuncio Grande (Banner Hero)
+      const bannerGrande = document.querySelector('.banner-promocional-grande');
+      const bannerOverlay = document.querySelector('.banner-overlay');
+      const closeBtnGrande = document.querySelector('.close-btn-grande');
+
+      // 1. Aparecer después de 4 segundos
+      setTimeout(() => {
+        if (bannerGrande && bannerOverlay) {
+          bannerGrande.style.display = 'flex';
+          bannerOverlay.style.display = 'block';
+        }
+      }, 4000);
+
+      // 2. Cerrar con el botón (X)
+      const cerrarBanner = () => {
+        bannerGrande.style.display = 'none';
+        bannerOverlay.style.display = 'none';
+      };
+
+      if (closeBtnGrande) closeBtnGrande.onclick = cerrarBanner;
+
+      // 3. Cerrar al hacer clic afuera del banner
+      window.addEventListener('click', (event) => {
+        // Si el clic es en el overlay (afuera del banner), se cierra
+        if (event.target === bannerOverlay) {
+          cerrarBanner();
+        }
+      });
+
+      // Lógica para la Pantalla de Compra (BETA)
+      const buyButtons = document.querySelectorAll('.buy-button');
+      const checkoutOverlay = document.querySelector('.checkout-overlay');
+      const checkoutScreen = document.querySelector('.checkout-screen');
+      const closeCheckout = document.querySelector('.close-checkout');
+
+      const toggleCheckout = (show) => {
+        const display = show ? 'flex' : 'none';
+        const overlayDisplay = show ? 'block' : 'none';
+        if (checkoutScreen) checkoutScreen.style.display = display;
+        if (checkoutOverlay) checkoutOverlay.style.display = overlayDisplay;
+      };
+
+      let cart = []; // Array para almacenar todos los productos del carrito
+
+      // Función centralizada para actualizar la interfaz del carrito en tiempo real
+      const actualizarCarritoUI = () => {
+        const badge = document.getElementById('cart-count');
+        const icon = document.querySelector('.cart-icon');
+        const summaryContainer = document.getElementById('summary-content');
+        const totalPriceDisplay = document.getElementById('summary-total-price');
+        
+        let totalQty = 0;
+        let grandTotal = 0;
+        let htmlContent = '';
+
+        cart.forEach(product => {
+          totalQty += product.qty;
+          const productTotal = product.price * product.qty;
+          grandTotal += productTotal;
+          
+          htmlContent += `
+            <div class="summary-item">
+              <img src="${product.img}" alt="${product.name}" style="width:60px; height:45px; object-fit:contain;">
+              <div class="summary-info">
+                <span style="font-weight:bold;">${product.name}</span>
+                <span>Cant: ${product.qty} - $${productTotal.toFixed(2)}</span>
+              </div>
+            </div>
+          `;
+        });
+
+        if (summaryContainer) summaryContainer.innerHTML = htmlContent;
+
+        // Actualizar el número rojo (Badge)
+        if (badge) {
+          badge.innerText = totalQty;
+          badge.style.display = totalQty > 0 ? 'flex' : 'none';
+        }
+        
+        // Activar vibración si hay productos
+        if (totalQty > 0) icon.classList.add('vibrate');
+        if (totalPriceDisplay) totalPriceDisplay.innerText = `$${grandTotal.toFixed(2)}`;
+      };
+
+      // Función para abrir la pantalla de compra y pasar el nombre
+      const abrirCheckout = (event) => {
+        cerrarBanner();
+        
+        // Obtener el nombre del producto desde el botón del ítem clickeado
+        const item = event.target.closest('.product-item');
+        const btn = item.querySelector('.buy-button');
+        const qtyDisplay = item.querySelector('.qty-display');
+        const qtyControl = item.querySelector('.quantity-control');
+
+        // Si el clic viene del botón y el control de cantidad está oculto, solo mostrarlo
+        const isButtonClick = event.target.classList.contains('buy-button');
+        if (isButtonClick && window.getComputedStyle(qtyControl).display === 'none') {
+          qtyControl.style.display = 'flex';
+          return; // No abrir el checkout todavía
+        }
+
+        const qty = parseInt(qtyDisplay.innerText);
+        const name = btn.getAttribute('data-name');
+        const priceUnit = parseFloat(btn.getAttribute('data-price'));
+        const img = btn.getAttribute('data-img');
+
+        // Insertar nombre en el encabezado del checkout
+        const display = document.getElementById('checkout-display-name');
+        if (display) display.innerText = name;
+
+        // Lógica de persistencia: Añadir o actualizar en el array 'cart'
+        const existingProduct = cart.find(p => p.name === name);
+        if (existingProduct) {
+          existingProduct.qty += qty;
+        } else {
+          cart.push({ name, price: priceUnit, img, qty });
+        }
+
+        // Actualizar interfaz en tiempo real
+        actualizarCarritoUI();
+
+        // Resetear área de pago
+        document.getElementById('upload-receipt-area').style.display = 'none';
+
+        toggleCheckout(true);
+      };
+
+      document.querySelectorAll('.product-item').forEach(item => {
+        const btn = item.querySelector('.buy-button');
+        const img = item.querySelector('.product-image');
+        btn.addEventListener('click', (e) => abrirCheckout(e));
+        img.addEventListener('click', (e) => abrirCheckout(e));
+      });
+
+      // Lógica para botones de cantidad (+)
+      document.querySelectorAll('.qty-plus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const display = e.target.parentElement.querySelector('.qty-display');
+          let currentQty = parseInt(display.innerText);
+          display.innerText = currentQty + 1;
+        });
+      });
+
+      // Redirigir al checkout al hacer clic en el carrito
+      document.querySelector('.cart-icon-container').addEventListener('click', () => {
+        if (cart.length > 0) {
+          actualizarCarritoUI();
+          toggleCheckout(true);
+        }
+      });
+
+      // Cerrar pantalla de compra
+      if (closeCheckout) closeCheckout.onclick = () => toggleCheckout(false);
+      window.addEventListener('click', (event) => {
+        if (event.target === checkoutOverlay) toggleCheckout(false);
+      });
+
+      // Lógica de transferencia bancaria
+      const btnTransfer = document.getElementById('btn-bank-transfer');
+      if (btnTransfer) {
+        btnTransfer.onclick = () => {
+          document.getElementById('upload-receipt-area').style.display = 'block';
+        };
+      }
+    </script>
+  </body>
+</html> 
